@@ -72,3 +72,8 @@ nav ul li a::after {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
 }
+
+nav ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
