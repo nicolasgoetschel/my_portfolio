@@ -113,9 +113,65 @@
               Employers benefit from my unique perspective in an interconnected
               and globalised world.
             </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skill')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skill">
+              <ul>
+                <li>
+                  <span>Java</span><br />
+                  Skill.
+                </li>
+                <li>
+                  <span>JavaScript</span><br />
+                  Skill.
+                </li>
+                <li>
+                  <span>Python</span><br />
+                  Skill.
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>2023-current</span><br />Experience.</li>
+                <li><span>2022-2023</span><br />Experience.</li>
+                <li><span>2021-2022</span><br />Experience.</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>2023-current</span><br />Education.</li>
+                <li><span>2022-2023</span><br />Education.</li>
+                <li><span>2021-2022</span><br />Education.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <script>
+      let tablinks = document.getElementsByClassName('tab-links');
+      let tabcontents = document.getElementsByClassName('tab-contents');
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove('active-link');
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove('active-tab');
+        }
+
+        event.currentTarget.classList.add('active-link');
+        document.getElementById(tabname).classList.add('active-tab');
+      }
+    </script>
   </body>
 </html>
