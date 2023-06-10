@@ -119,3 +119,26 @@ nav ul li a:hover::after {
 .header-bottom-content div:nth-child(1) a {
   color: var(--text-white);
 }
+
+.header-bottom-content div:nth-child(1):hover {
+  background: transparent;
+}
+
+.header-bottom-content div:nth-child(1):hover a {
+  color: var(--text);
+}
+
+.header-bottom-content div a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.2rem;
+  font-family: 'Mukta', sans-serif;
+}
+
+.header-bottom-content div:hover a {
+  color: var(--text-white);
+}
+
+.header-bottom-content div:hover {
+  background: var(--main-color);
+}
