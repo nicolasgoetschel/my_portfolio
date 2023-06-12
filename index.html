@@ -34,22 +34,17 @@
               </a>
             </li>
             <li>
-              <a href="#header">
+              <a href="#about">
                 <h3>About</h3>
               </a>
             </li>
             <li>
-              <a href="#header">
-                <h3>Experience</h3>
-              </a>
-            </li>
-            <li>
-              <a href="#header">
+              <a href="#portfolio">
                 <h3>Portfolio</h3>
               </a>
             </li>
             <li>
-              <a href="#header">
+              <a href="#contact">
                 <h3>Contact</h3>
               </a>
             </li>
@@ -190,6 +185,80 @@
       </div>
     </div>
 
+    <div id="contact" data-aos="fade-up" data-aos-delay="300">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="bi bi-envelope-fill"></i>nicgoe@hotmail.com</p>
+            <p><i class="bi bi-telephone-fill"></i>+447832737322</p>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-github"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-whatsapp"></i></a>
+            </div>
+            <a href="cv.pdf" class="btn btn2" download>
+              Download CV <i class="bi bi-card-text"></i
+            ></a>
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input
+                type="text"
+                name="Name"
+                placeholder="Your name here"
+                required
+              />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email here"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+
+              <span id="msg"></span>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Copyright &copy; Nicolas Goetschel</p>
+      </div>
+    </div>
+
+    <script>
+      document.onreadystatechange = () => {
+        if (document.readyState !== 'complete') {
+          document.querySelector('body').style.visibility = 'hidden';
+          document.querySelector('#loader').style.visibility = 'visible';
+        }
+
+        setTimeout(() => {
+          document.querySelector('body').style.visibility = 'visible';
+          document.querySelector('#loader').style.display = 'none';
+        }, 3000);
+      };
+    </script>
+
+    <script>
+      let sidemenu = document.getElementById('sidemenu');
+
+      function openmenu() {
+        sidemenu.style.right = '0';
+      }
+
+      function closemenu() {
+        sidemenu.style.right = '-200px';
+      }
+    </script>
+
     <script>
       let tablinks = document.getElementsByClassName('tab-links');
       let tabcontents = document.getElementsByClassName('tab-contents');
@@ -205,6 +274,30 @@
         event.currentTarget.classList.add('active-link');
         document.getElementById(tabname).classList.add('active-tab');
       }
+    </script>
+
+    <script>
+      const scriptURL =
+        'https://script.google.com/macros/s/AKfycbx_BLROnSR1VRid-enuqUzpCpAttJzK7eoCZzi59ZBCsTunFFmvsja1BeAee1plLTfj/exec';
+      const form = document.forms['submit-to-google-sheet'];
+      const msg = document.getElementById('msg');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = 'Message sent successfully';
+            setTimeout(function () {
+              msg.innerHTML = '';
+            }, 4000);
+            form.reset();
+          })
+          .catch((error) => console.error('Error!', error.message));
+      });
+    </script>
+
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>
