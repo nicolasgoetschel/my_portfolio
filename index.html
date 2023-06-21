@@ -5,25 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
     />
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
 
   <body>
+    <div class="center" id="loader"></div>
     <div id="header">
       <div class="container">
         <nav>
           <a href="index.html"
             ><img
-              src="image/Nicolas-designstyle-colors-m.png"
+              src="image/nicolas-goetschel-logo.jpeg"
               alt="logo"
               class="logo"
           /></a>
@@ -48,8 +46,11 @@
                 <h3>Contact</h3>
               </a>
             </li>
+            <i class="bi bi-x times" onclick="closemenu()"></i>
           </ul>
+          <i class="bi bi-list" onclick="openmenu()"></i>
         </nav>
+
         <div class="header-text">
           <p>Junior Software Engineer</p>
           <h1>Hi, I am <span>Nicolas Goetschel</span></h1>
@@ -66,11 +67,12 @@
         </div>
       </div>
     </div>
-    <div id="about">
+    <!---------------About---------------->
+    <div id="about" data-aos="fade-in" data-aos-delay="200">
       <div class="container">
         <div class="row">
           <div class="about-col-1">
-            <img src="image/nicolas123.jpeg" alt="" />
+            <img src="image/DSC00743 2.JPG" alt="" />
           </div>
           <div class="about-col-2">
             <h1 class="sub-title">About Me</h1>
@@ -177,39 +179,48 @@
       </div>
     </div>
 
-    <div id="portfolio">
+    <!---------------Portfolio---------------->
+    <div id="portfolio" data-aos="zoom-in" data-aos-delay="300">
       <div class="container">
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
           <div class="work">
-            <img src="image/img 1.jpg" alt="" />
+            <img src="image/Uber.png" alt="" />
             <div class="layer">
               <h3>Uber Clone App</h3>
               <p>Uber Clone. Check it out on my GitHub.</p>
-              <a href="#"><i class="bi bi-box-arrow-up-right"></i></a>
+              <a href="https://github.com/nicolasgoetschel/UberClone_Capstone"
+                ><i class="bi bi-box-arrow-up-right"></i
+              ></a>
             </div>
           </div>
           <div class="work">
-            <img src="image/img 2.jpg" alt="" />
+            <img src="image/Mind Blank.png" alt="" />
             <div class="layer">
-              <h3>Quiz Game App</h3>
+              <h3>Mind Blank</h3>
               <p>Quiz App. Check it out on my GitHub.</p>
-              <a href="#"><i class="bi bi-box-arrow-up-right"></i></a>
+              <a href="https://github.com/nicolasgoetschel/Mind-Blank"
+                ><i class="bi bi-box-arrow-up-right"></i
+              ></a>
             </div>
           </div>
           <div class="work">
-            <img src="image/img 3.jpg" alt="" />
+            <img src="image/Groundhopper.png" alt="" />
             <div class="layer">
-              <h3>Football Ground Tracker App</h3>
-              <p>Groundhopper. Check it out on my GitHub.</p>
-              <a href="#"><i class="bi bi-box-arrow-up-right"></i></a>
+              <h3>Groundhopper</h3>
+              <p>Football Ground Tracker. Check it out on my GitHub.</p>
+              <a href="https://github.com/nicolasgoetschel/groundhopping_app"
+                ><i class="bi bi-box-arrow-up-right"></i
+              ></a>
             </div>
           </div>
         </div>
-        <a href="#" class="btn"> See More</a>
+        <!-- <a href="#" class="btn"> See More</a> -->
+        <!---------------See More button not needed atm---------------->
       </div>
     </div>
 
+    <!---------------Contact---------------->
     <div id="contact" data-aos="fade-up" data-aos-delay="300">
       <div class="container">
         <div class="row">
@@ -218,9 +229,15 @@
             <p><i class="bi bi-envelope-fill"></i>nicgoe@hotmail.com</p>
             <p><i class="bi bi-telephone-fill"></i>+447832737322</p>
             <div class="social-icons">
-              <a href="#"><i class="bi bi-github"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="https://github.com/nicolasgoetschel"
+                ><i class="bi bi-github"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/goetschel/"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a href="https://www.instagram.com/nicolasgoetschel/"
+                ><i class="bi bi-instagram"></i
+              ></a>
             </div>
             <a href="cv.pdf" class="btn btn2" download>
               Download CV <i class="bi bi-card-text"></i
@@ -257,6 +274,7 @@
       </div>
     </div>
 
+    <!---------------Script for loader---------------->
     <script>
       document.onreadystatechange = () => {
         if (document.readyState !== 'complete') {
@@ -271,6 +289,7 @@
       };
     </script>
 
+    <!---------------Script for toggle navbar in small screens---------------->
     <script>
       let sidemenu = document.getElementById('sidemenu');
 
@@ -283,6 +302,7 @@
       }
     </script>
 
+    <!---------------Script for tab contents---------------->
     <script>
       let tablinks = document.getElementsByClassName('tab-links');
       let tabcontents = document.getElementsByClassName('tab-contents');
@@ -300,9 +320,10 @@
       }
     </script>
 
+    <!---------------Script for contact form---------------->
     <script>
       const scriptURL =
-        'https://script.google.com/macros/s/AKfycbx_BLROnSR1VRid-enuqUzpCpAttJzK7eoCZzi59ZBCsTunFFmvsja1BeAee1plLTfj/exec';
+        'https://script.google.com/macros/s/AKfycbyXlCWd3i0j4v8nsN9TrqHJ0ZoKCpLnV0ESpIruujxO5qfL1zPzOBb2ejeiG7sh9VwB/exec';
       const form = document.forms['submit-to-google-sheet'];
       const msg = document.getElementById('msg');
 
