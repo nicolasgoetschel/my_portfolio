@@ -625,6 +625,12 @@ form .btn2 {
   .copyright {
     font-size: 12px;
   }
+
+  .tab-contents li span {
+    /* Prevent the span from being recognized as a phone number */
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 @media (max-width: 450px) {
